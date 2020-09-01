@@ -1,0 +1,49 @@
+#body {
+    margin: 0px;
+  }
+  h2{text-decoration: none;
+      color: rgb(108, 127, 230);
+      padding: 2vw;
+      font-family: monospace;
+      font-size: larger;
+  
+  }
+  #nav-bar {
+    background-color: rgb(230, 250, 6);
+    width: 250vw;
+    height: 40px;
+  }
+  a{
+      text-decoration: none;
+      color:  rgb(108, 127, 230);
+      padding: 2vw;
+      font-family: monospace;
+      font-size: larger;
+
+    }
+    a:hover{
+    
+        background-color: #c6E9FF;
+        font-size: 150%;
+    }
+    
+    
+    #header {
+      background: rgb(108, 127, 230);
+      color: white;
+      font: arial;
+      font-size: 16px;
+      padding: 12px;
+    }
+    #header > #name {
+      font-family: Arial, Sans-serif;
+      display: inline-block;
+    }
+    #menu a,
+    #menubutton a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      font-family: Arial, Sans-serif;
+      font-size: 13px;
+    }

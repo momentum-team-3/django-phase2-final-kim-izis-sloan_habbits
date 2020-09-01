@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load markdown_extras %}
+
+{% block content %}
+<h2>All Habits</h2>
+{% for habit in habits %}
+<div>
+    <div>
+        <h3><strong>{{ note.title }}</strong></h3>
+    </div>
+    <p>{{ habit.body | markdown | safe }}</p><br>
+    <p>{{ habit.date_time }}</p>
+</div>
+
+<p>
+    <a href="{%url 'habit_detail' pk=habit.pk %}">Show Habit</a>
+    <a href="{% url 'edit_habit' pk=habit.pk %}">Edit Habit</a>
+</p><br><br>
+
+{% endfor %}
+{% endblock %}
