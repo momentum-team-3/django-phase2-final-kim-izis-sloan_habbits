@@ -21,5 +21,5 @@ class PasswordResetForm(dj_auth.formsPasswordResetForm):
 class SetPasswordForm(dj_auth.forms.SetPasswordForm):
     pass
 
-class PasswordChangeForm)dj_auth.forms.PasswordChangeForm):
+class PasswordChangeForm(dj_auth.forms.PasswordChangeForm):
     pass
