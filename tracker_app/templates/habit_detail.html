@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load markdown_extras %}
+
+{% block content %}
+<div>
+    <h1><strong>{{ habit.title }}</strong></h1>
+    <p>{{ habit.body | markdown | safe }}</p><br>
+    <p>{{ habit.date_time }}</p>
+    <p>
+        <a href="{% url 'edit_habit' pk=habit.pk %}">Edit Habit</a>
+        <a href="{% url 'list_habits'%}">List All Habits</a>
+        <a href="{% url 'delete_habit' pk=habit.pk %}">Delete Habit</a>
+    </p>
+</div>
+{% endblock %}
