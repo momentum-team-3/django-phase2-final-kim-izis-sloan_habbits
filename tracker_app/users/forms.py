@@ -1,8 +1,8 @@
 import django.contrib.auth as dj_auth
 from .models import User
 
-class userCreationForm(dj_auth.forms.UserCreationForm):
-    class Meta(dj_auth.forms.UserCreationsForm.Meta):
+class UserCreationForm(dj_auth.forms.UserCreationForm):
+    class Meta(dj_auth.forms.UserCreationForm.Meta):
         model = User
         fields = dj_auth.forms.UserCreationForm.Meta.fields
 
@@ -12,10 +12,10 @@ class UserChangeForm(dj_auth.forms.UserChangeForm):
         model = User
         fields = dj_auth.forms.UserChangeForm.Meta.fields
 
-class AuthenticationForm(dj_auth.formsAuthenticationForm):
+class AuthenticationForm(dj_auth.forms.AuthenticationForm):
     pass
 
-class PasswordResetForm(dj_auth.formsPasswordResetForm):
+class PasswordResetForm(dj_auth.forms.PasswordResetForm):
     pass
 
 class SetPasswordForm(dj_auth.forms.SetPasswordForm):
