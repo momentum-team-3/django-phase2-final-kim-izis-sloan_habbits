@@ -12,6 +12,7 @@ from .models import User
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+
 def register(request):
     """Register a new user"""
     if request.method != 'POST':
@@ -29,7 +30,7 @@ def register(request):
 
     #Display a blank or invalid form.
     context = {'form': form}
-    return render(request, 'registration/register.html', context)        
+    return render(request, 'users/create.html', context)        
 
 
 
@@ -72,17 +73,17 @@ class PasswordChangeDoneView(auth_views.PasswordChangeDoneView):
 
 
 class PasswordResetView(auth_views.PasswordResetView):
-    template_name = "users/reset_password.html"
+    template_name = "users/password_reset_form.html"
     email_template_name = "users/password_reset_email.html"
     form_class = forms.PasswordResetForm
 
 
 class PasswordResetDoneView(auth_views.PasswordResetDoneView):
-    template_name = "users/reeset_password_done.html"
+    template_name = "users/password_reset_done.html"
 
 
 class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
-    template_name = "users/reset_password_confirm.html"
+    template_name = "users/password_reset_confirm.html"
     form_class = forms.SetPasswordForm
 
 
