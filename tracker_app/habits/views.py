@@ -52,33 +52,3 @@ def habit_delete(request, pk):
     habit.delete()
     return redirect('habit_list')
 
-"""
-def record_new(request, pk):
-    if request.method == 'POST':
-        form = HabitRecordForm(request.POST)
-        if form.is_valid():
-            record = form.save()
-            return redirect('habit_detail', pk = pk)
-    else: 
-        form = HabitRecordForm()
-
-    return render(request, 'habits/record_new.html', {"form": form})
-
-
-def record_edit(request, pk):
-    record = get_object_or_404(HabitRecord)
-    if request.method == 'POST':
-        form = HabitRecordForm(request.POST, instance=record)
-        if form.is_valid():
-            form.save()
-            return redirect('habit_detail', pk = pk)
-    else:
-        form = HabitRecordForm(instance=record)
-    
-    return render(request, 'habits/record_edit.html', {"form": form})
-
-
-
-def calendar(request):
-    return render(request, 'habits/calendar.html')
-"""
