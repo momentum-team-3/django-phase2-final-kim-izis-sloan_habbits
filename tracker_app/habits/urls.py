@@ -14,9 +14,21 @@ Including another URLconf
 """
 
 
-from habits.views import url
-from django.urls import path, include
+
+from django.urls import path 
 from . import views
 
 
-urlpatterns =[ path ()]
+urlpatterns =[ 
+# 1) list of a user's habits
+path('', views.habit_list, name = 'habit_list'),
+# 2) a more detailed view of a specific habit (needs a pk)
+path('<int:pk>/', views.habit_detail, name='habit_detail'),
+# 3) a view for adding a habit
+path('create/', views.habit_new, name='habit_new'),
+# 4) a view for updating a habit (requires a primary key)
+path('update/<int:pk>/', views.habit_edit, name='habit_edit'),
+# 5) a view for deleting a habit (requires a primary key)
+path('delete/<int:pk>/', views.habit_delete, name='habit_delete'),
+]
+
