@@ -46,7 +46,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = dj_auth.authenticate(username=username, password=raw_password)
             dj_auth.login(request, user)
-            return redirect(to='notes/')
+            return redirect(to='habits/')
 
     else:
         form = forms.UserCreationForm()
@@ -56,6 +56,7 @@ def signup(request):
 
 class LoginView(auth_views.LoginView):
     template_name = "users/login.html"
+    redirect_field_name = ""
     authentication_form = forms.AuthenticationForm
 
 

@@ -1,14 +1,13 @@
 {% extends "base.html" %}
-{% load markdown_extras %}
 
 {% block content %}
 <h2>All Habits</h2>
 {% for habit in habits %}
 <div>
     <div>
-        <h3><strong>{{ note.title }}</strong></h3>
+        <h3><strong>{{ habit.goal_description }}</strong></h3>
     </div>
-    <p>{{ habit.body | markdown | safe }}</p><br>
+    <p>{{ habit.goal_count }}</p><br>
     <p>{{ habit.date_time }}</p>
 </div>
 
